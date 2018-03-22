@@ -6,7 +6,7 @@ import { DishService } from '../services/dish.service';
   selector: 'app-menu',
     moduleId: module.id,
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  //styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   dishes: Dish[];
