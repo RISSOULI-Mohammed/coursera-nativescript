@@ -11,8 +11,8 @@ import { DrawerPage } from '../shared/drawer/drawer.page';
   //styleUrls: ['./menu.component.css']
 })
 export class MenuComponent extends DrawerPage implements OnInit {
+  
   dishes: Dish[];
-
   errMess: string;
 
   constructor(private dishService: DishService,
