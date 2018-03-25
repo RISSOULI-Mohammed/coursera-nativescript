@@ -11,7 +11,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
-    { path: "", redirectTo: "/home", pathMatch: "full" },
+    //{ path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "", redirectTo: "/menu", pathMatch: "full" },
     { path: "home", component: HomeComponent },
     { path: "menu", component: MenuComponent },
     { path: "contact", component: ContactComponent },
