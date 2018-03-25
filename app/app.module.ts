@@ -5,13 +5,15 @@ import { AppComponent } from "./app.component";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptUISideDrawerModule } from "nativescript-telerik-ui/sidedrawer/angular";
 import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
+import { NativeScriptUIListViewModule } from "nativescript-telerik-ui/listview/angular";
 
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 import { DrawerComponent } from "./shared/drawer/drawer.component";
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { AboutComponent } from './about/about.component'
+import { AboutComponent } from './about/about.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 import { DishService } from './services/dish.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
@@ -34,7 +36,8 @@ import { baseURL } from './shared/baseurl';
         AppRoutingModule,
         NativeScriptHttpModule,
         NativeScriptUISideDrawerModule,
-        TNSFontIconModule.forRoot({'fa': './fonts/font-awesome.min.css'})
+        TNSFontIconModule.forRoot({'fa': './fonts/font-awesome.min.css'}),
+        NativeScriptUIListViewModule
     ],
     declarations: [
         AppComponent,
@@ -43,7 +46,8 @@ import { baseURL } from './shared/baseurl';
         DrawerComponent,
         HomeComponent,
         ContactComponent,
-        AboutComponent
+        AboutComponent,
+        FavoritesComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
