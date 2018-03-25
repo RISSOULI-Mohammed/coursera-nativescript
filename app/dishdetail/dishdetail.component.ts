@@ -86,6 +86,8 @@ export class DishdetailComponent implements OnInit {
       .then((result: Comment) => {
         console.log(JSON.stringify(result));
         this.dish.comments.push(result);
+        this.avgstars = (((Number(this.avgstars) * this.numcomments) + result.rating) / (this.numcomments + 1)).toFixed(2);
+        this.numcomments += 1;
       });
 
       }
