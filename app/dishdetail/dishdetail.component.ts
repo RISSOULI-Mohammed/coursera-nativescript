@@ -7,7 +7,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import 'rxjs/add/operator/switchMap';
 import { FavoriteService } from '../services/favorite.service';
 import { TNSFontIconService } from 'nativescript-ngx-fonticon';
-import * as Toast from "nativescript-toast";
+import { Toasty } from 'nativescript-toasty';
 
 @Component({
   selector: 'app-dishdetail',
@@ -51,7 +51,7 @@ export class DishdetailComponent implements OnInit {
     if (!this.favorite) {
       console.log('Adding to Favorites', this.dish.id);
       this.favorite = this.favoriteservice.addFavorite(this.dish.id);
-      const toast = Toast.makeText("Added Dish " + this.dish.id, "short");
+      const toast = new Toasty("Added Dish "+ this.dish.id, "short", "bottom");
       toast.show();
     }
   }
