@@ -6,3 +6,4 @@ tags
 app/**/*.js
 app/global.d.ts
 platforms
+app/**/*.bak
