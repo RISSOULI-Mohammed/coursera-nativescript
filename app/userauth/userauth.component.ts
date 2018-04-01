@@ -5,6 +5,7 @@ import { getString, setString } from 'application-settings';
 import { RouterExtensions } from 'nativescript-angular/router';
 import * as camera from 'nativescript-camera';
 import { Image } from 'ui/image';
+import * as imagepicker from 'nativescript-imagepicker';
 
 @Component({
     moduleId: module.id,
@@ -54,6 +55,18 @@ export class UserAuthComponent implements OnInit {
                 .catch((err) => console.log('Error -> ' + err.message));
         }
 
+    }
+
+    getFromLibrary() {
+      let context = imagepicker.create({
+        mode: "single"
+      });
+      context.authorize()
+          .then(() => context.present())
+          .then(selection => selection.forEach(imageAsset => {
+            let image = <Image>this.page.getViewById<Image>('myPicture');
+            image.src = imageAsset;
+          }))
     }
 
     register() {
